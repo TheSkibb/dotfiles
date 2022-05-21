@@ -1,0 +1,24 @@
+00:00:00.384223 VirtualBox GUI VM Selector Window 6.1.34 r150636 linux.amd64 (Apr 21 2022 20:04:42) release log
+00:00:00.384227 Log opened 2022-05-20T21:17:16.808222000Z
+00:00:00.384230 Build Type: release
+00:00:00.384234 OS Product: Linux
+00:00:00.384237 OS Release: 5.17.7-arch1-1
+00:00:00.384239 OS Version: #1 SMP PREEMPT Thu, 12 May 2022 18:55:54 +0000
+00:00:00.384263 DMI Product Name: 82A2
+00:00:00.384274 DMI Product Version: Yoga Slim 7 14ARE05
+00:00:00.384282 Firmware type: UEFI
+00:00:00.384533 Secure Boot: Disabled
+00:00:00.384587 Host RAM: 15428MB (15.0GB) total, 14468MB (14.1GB) available
+00:00:00.384593 Executable: /usr/lib/virtualbox/VirtualBox
+00:00:00.384595 Process ID: 9261
+00:00:00.384597 Package type: LINUX_64BITS_GENERIC (OSE)
+00:00:00.384651 Qt version: 5.15.3
+00:00:00.423914 GUI: UIMediumEnumerator: Medium-enumeration started...
+00:00:00.775968 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenAvailableGeometryCalculated: Screen 1 work area is actually resized to: 2880x0 x 960x1060
+00:00:00.776562 GUI: UIDesktopWidgetWatchdog::sltHandleHostScreenAvailableGeometryCalculated: Screen 0 work area is actually resized to: 1920x0 x 960x1060
+00:00:00.788585 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:00:51.616121 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:00:56.746424 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:00:57.313727 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:29:50.227472 GUI: UIMediumEnumerator: Medium-enumeration finished!
+00:29:50.757015 GUI: UIMediumEnumerator: Medium-enumeration finished!
