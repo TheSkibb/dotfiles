@@ -1,7 +1,7 @@
 # kristians zsh config
 #PROMPT="%2d%F{magenta}>%f "
 autoload -U colors && colors
-PS1="%{$fg[green]%}%~ 
+PS1=" %{$fg[green]%}%~ 
  %{$fg[magenta]%}> % %{$reset_color"
 
 
