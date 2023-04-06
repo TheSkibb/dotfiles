@@ -1,4 +1,4 @@
 #!/bin/sh
-xmodmap -e "pointer = 3 2 1"
+xmodmap -e "pointer = 1 2 3"
 
 
