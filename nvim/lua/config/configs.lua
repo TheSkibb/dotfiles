@@ -44,10 +44,11 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 
-opt.iskeyword:append("-") -- consider string-string as whole word
+-- opt.iskeyword:append("-") -- consider string-string as whole word
 
 vim.cmd("cnoreabbrev W w")
 vim.cmd("cnoreabbrev Q q")
 vim.cmd("cnoreabbrev WQ wq")
 vim.cmd("cnoreabbrev Wq wq")
+vim.cmd("set noswapfile")
 

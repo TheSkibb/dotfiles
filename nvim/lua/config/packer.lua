@@ -7,16 +7,9 @@ return require('packer').startup(function(use)
   'nvim-telescope/telescope.nvim', tag = '0.1.0',
   requires = { {'nvim-lua/plenary.nvim'} }
   }
-  use({
-    'rose-pine/neovim',
-    as = 'rose-pine',
-    config = function()
-        vim.cmd('colorscheme rose-pine')
-    end
-  })
   use('nvim-treesitter/nvim-treesitter', {run= ':TSUpdate'})
   use('theprimeagen/harpoon')
-  -- maybe install later use('mbbil/undotree')
+  -- use 'mbbil/undotree'
   use {
   'VonHeikemen/lsp-zero.nvim',
   requires = {
@@ -39,6 +32,7 @@ return require('packer').startup(function(use)
     {'rafamadriz/friendly-snippets'},
   },
   use ('morhetz/gruvbox'),
+  use ("tpope/vim-fugitive"),
   use {
   'nvim-tree/nvim-tree.lua',
   requires = {

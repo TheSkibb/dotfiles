@@ -8,6 +8,10 @@ vim.cmd("cnoreabbrev W w")
 vim.cmd("cnoreabbrev Q q")
 vim.cmd("cnoreabbrev WQ wq")
 vim.cmd("cnoreabbrev Wq wq")
+vim.cmd("cnoreabbrev qw wq")
+vim.cmd("cnoreabbrev Qw wq")
+vim.cmd("cnoreabbrev qW wq")
+vim.cmd("cnoreabbrev QW wq")
 
 -- clear search highlights
 vim.keymap.set("n", "<leader>nh", ":nohl<CR>")
@@ -29,4 +33,4 @@ vim.keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
-
+vim.keymap.set("n", "<C-h>", "") --  go to previous tab
