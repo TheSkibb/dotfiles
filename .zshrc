@@ -1,7 +1,7 @@
 # kristians zsh config
 #PROMPT="%2d%F{magenta}>%f "
 autoload -U colors && colors
-#PS1=" $fg[green]%4d% 
+#PS1=" $fg[green]%4d%
  #%{$fg[magenta]%}> % %{$reset_color"
  # Load version control information
 autoload -Uz vcs_info
@@ -16,7 +16,8 @@ setopt PROMPT_SUBST
 PROMPT='$fg[green]${PWD/#$HOME/~} $fg[yellow]${vcs_info_msg_0_}
 %{$fg[magenta]%}> %{$reset_color'
 
-alias vim="nvim"
+#alias vim="nvim"
+alias vim=/home/kristian/Programs/nvim-linux64/bin/nvim
 alias ls="ls -a --color"
 alias i3lock="i3lock --color=990099"
 alias rn=". ranger"
@@ -26,9 +27,11 @@ ADT=/home/kristian/skolearbeidUiA/semester6/bachelor/PowerMarketViewer
 FRONT=/home/kristian/skolearbeidUiA/semester6/bachelor/PowerMarketViewer/ADT/Frontend/PowerMarketViewer
 BACH=/home/kristian/skolearbeidUiA/semester6/bachelor/
 
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
 export NVM_DIR="$HOME/.nvm"
+export PATH=$PATH:/usr/local/go/bin
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
