@@ -22,11 +22,6 @@ alias ls="ls -a --color"
 alias i3lock="i3lock --color=990099"
 alias rn=". ranger"
 
-ANG=/home/kristian/skolearbeidUiA/semester6/bachelor/angular-chrash/
-ADT=/home/kristian/skolearbeidUiA/semester6/bachelor/PowerMarketViewer
-FRONT=/home/kristian/skolearbeidUiA/semester6/bachelor/PowerMarketViewer/ADT/Frontend/PowerMarketViewer
-BACH=/home/kristian/skolearbeidUiA/semester6/bachelor/
-
 export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:/usr/local/go/bin
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
