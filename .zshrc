@@ -21,6 +21,13 @@ alias vim=/home/kristian/Programs/nvim-linux64/bin/nvim
 alias ls="ls -a --color"
 alias i3lock="i3lock --color=990099"
 alias rn=". ranger"
+alias py="python3"
+alias pdb="python3 -m pdb"
+alias jup="jupyter notebook ."
+alias xcopy="xclip -selection c"
+alias kali="docker run -it kalilinux/kali-rolling"
+
+source $HOME/.config/scripts/zsh
 
 export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:/usr/local/go/bin
@@ -29,4 +36,5 @@ export PATH=$PATH:/usr/local/go/bin
 
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+#source <(ng completion script)
+
