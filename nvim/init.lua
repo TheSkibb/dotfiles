@@ -714,6 +714,7 @@ vim.cmd("cnoreabbrev qw wq")
 vim.cmd("cnoreabbrev Qw wq")
 vim.cmd("cnoreabbrev qW wq")
 vim.cmd("cnoreabbrev QW wq")
+vim.cmd("cnoreabbrev = w")
 
 vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'open diagnostic for current line '})
 
