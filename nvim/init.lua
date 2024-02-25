@@ -448,7 +448,7 @@ vim.keymap.set('n', '<leader>fr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+    ensure_installed = { 'c', 'json', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -715,6 +715,7 @@ vim.cmd("cnoreabbrev Qw wq")
 vim.cmd("cnoreabbrev qW wq")
 vim.cmd("cnoreabbrev QW wq")
 vim.cmd("cnoreabbrev = w")
+vim.cmd("cnoreabbrev =q wq")
 
 vim.keymap.set('n', 'gl', vim.diagnostic.open_float, { desc = 'open diagnostic for current line '})
 
@@ -730,6 +731,7 @@ vim.opt.expandtab = true
 vim.keymap.set("n", "<leader>e", ":Ex<CR>", { desc = "open file explorer"})
 vim.keymap.set("n", "<leader>r", ":registers<CR>", { desc = "see registers"})
 vim.keymap.set("n", "<leader>nm", "i\\begin{bmatrix}\n\\end{bmatrix}<ESC>", { desc = "New Matrix "})
+vim.keymap.set("n", "<leader>fm", ":%!jq .<CR>", { desc = "Format current file with jq"})
 
 vim.cmd("command Newtask luafile /home/kristian/Projects/nvim-task-management/newTask.lua")
 -- The line beneath this is called `modeline`. See `:help modeline`
