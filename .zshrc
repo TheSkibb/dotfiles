@@ -1,4 +1,5 @@
 # kristians zsh config
+#
 #PROMPT="%2d%F{magenta}>%f "
 autoload -U colors && colors
 #PS1=" $fg[green]%4d%
@@ -23,18 +24,18 @@ alias i3lock="i3lock --color=990099"
 alias rn=". ranger"
 alias py="python3"
 alias pdb="python3 -m pdb"
-alias jup="jupyter notebook ."
-alias xcopy="xclip -selection c"
-alias kali="docker run -it kalilinux/kali-rolling"
+alias jup="jupyter lab ."
+alias clip="xclip -selection clipboard"
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m "
+alias gd="git diff"
 
+
+#Load scripts
 source $HOME/.config/scripts/zsh
 
-export NVM_DIR="$HOME/.nvm"
-export PATH=$PATH:/usr/local/go/bin
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#Greeting
+cowsay -f tux $(date)
 
-
-# Load Angular CLI autocompletion.
-#source <(ng completion script)
 
