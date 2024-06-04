@@ -1,0 +1,18 @@
+[Unit]
+Description=Lock the screen when going to sleep
+Before=sleep.target
+Before=suspend.target
+Before=hibernate.target
+
+[Service]
+User=kristian
+Type=forking
+Environment=DISPLAY=:1
+ExecStartPre=/usr/bin/xset dpms force suspend
+ExecStart=/usr/bin/i3lock -i /home/kristian/Pictures/wallpapers/space2.png
+Timeout=infinity
+
+[Install]
+WantedBy=sleep.target
+WantedBy=suspend.target
+Before=hibernate.target
