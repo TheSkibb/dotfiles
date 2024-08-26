@@ -24,11 +24,14 @@ include /etc/sway/config-vars.d/*
 
 bindsym $mod+space exec rofi -theme Adapta-Nokto -show drun -show-icons
 
+set $toggle_notification "swaync-client -t -sw"
+bindsym $mod+Shift+n exec $toggle_notification
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-#
+output * bg ~/Pictures/ocean.jpg fill
+
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -39,14 +42,17 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # Example configuration:
 #
- exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
-          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f -c 000000'
-#
-# This will lock your screen after 300 seconds of inactivity, then turn off
-# your displays after another 300 seconds, and turn your screens back on when
-# resumed. It will also lock your screen before your computer goes to sleep.
+exec swayidle -w \
+          timeout 300 $lock \
+          timeout 120 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          before-sleep $lock
+
+# lock screen on lid close
+set $lock 'swaylock --config /home/kristian/.config/sway/swaylock.conf'
+
+bindswitch --reload --locked lid:on exec $lock
+
+bindsym $mod+Shift+x exec $lock
 
 
 ### Key bindings
@@ -55,6 +61,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
     # Start a terminal
     bindsym $mod+t exec $term
+    bindsym $mod+Return exec $term
 
     # Kill focused window
     bindsym $mod+c kill
@@ -187,6 +194,12 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+bindsym $mod+Ctrl+equal resize grow width 10px
+bindsym $mod+Ctrl+minus resize shrink width 10px
+
+bindsym $mod+Ctrl+Shift+equal resize grow width 10px
+bindsym $mod+Ctrl+Shift+minus resize shrink width 10px
+
 #
 # Status Bar:
 #
@@ -196,19 +209,20 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    #status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    status_command while ~/.config/sway/swaystatus.sh; do sleep 1; done
 
     colors {
         statusline #ffffff
         background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        inactive_workspace #323232 #323232 #ffffff
     }
 }
 
 # System mode menu
 set $mode_system "What to do? (l) lock, (e) logout, (r) reboot, (s) suspend, (Shift+s) shutdown"
 mode $mode_system {
-	bindsym l exec $screenlock; mode "default"
+	bindsym l exec $lock; mode "default"
 	bindsym e exec swaymsg exit; mode "default"
 	bindsym r exec systemctl reboot; mode "default"
 	bindsym s exec systemctl suspend; mode "default"
@@ -239,6 +253,13 @@ input "type:touchpad" {
 	natural_scroll enabled
 	middle_emulation enabled
 }
+
+input type:keyboard {
+        xkb_layout us
+}
+
+bindsym $mod+Mod1+n input type:keyboard xkb_layout no
+bindsym $mod+Mod1+u input type:keyboard xkb_layout no
 
 # brightness
 bindsym XF86MonBrightnessDown exec brightnessctl -q set 5%- && ( echo $((`brightnessctl get` * 100 / `brightnessctl m`)) > $SWAYSOCK.wob )
