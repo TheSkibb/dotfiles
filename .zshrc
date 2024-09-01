@@ -34,6 +34,10 @@ alias gd="git diff"
 
 export EDITOR=vim
 
+bindkey '^N' down-line-or-history
+bindkey '^P' up-line-or-history
+bindkey '^K' backward-delete-char
+
 #Load scripts
 source $HOME/.config/scripts/zsh
 
