@@ -51,14 +51,16 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec alacritty
+bindsym $mod+t exec alacritty
 
 # kill focused window
-bindsym $mod+q kill
+bindsym $mod+c kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec --no-startup-id dmenu_run
 #bindsym $mod+d exec rofi -theme Adapta-Nokto -show drun -show-icons
 bindsym $mod+space exec rofi -theme Adapta-Nokto -show drun -show-icons
+bindsym $mod+p exec rofi -theme Adapta-Nokto -show drun -show-icons
 #bindsym $mod+Shift+d exec rofi -theme Adapta-Nokto -show drun
 
 # A more modern dmenu replacement is rofi:
