@@ -18,7 +18,7 @@ PROMPT='$fg[green]${PWD/#$HOME/~} $fg[yellow]${vcs_info_msg_0_}
 %{$fg[magenta]%}> %{$reset_color'
 
 #alias vim="nvim"
-#alias vim=~/Programs/nvim-linux64/bin/nvim
+alias vim=~/Programs/nvim-linux64/bin/nvim
 
 alias ls="ls -a --color"
 alias i3lock="i3lock --color=990099"
@@ -31,12 +31,13 @@ alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m "
 alias gd="git diff"
+alias mute="bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle"
 
-export EDITOR=vim
+export EDITOR=~/Programs/nvim-linux64/bin/nvim
 
-bindkey '^N' down-line-or-history
-bindkey '^P' up-line-or-history
+bindkey -e
 bindkey '^K' backward-delete-char
+
 
 #Load scripts
 source $HOME/.config/scripts/zsh
