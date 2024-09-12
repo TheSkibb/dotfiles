@@ -273,7 +273,7 @@ input type:keyboard {
 }
 
 bindsym $mod+Mod1+n input type:keyboard xkb_layout no
-bindsym $mod+Mod1+u input type:keyboard xkb_layout no
+bindsym $mod+Mod1+u input type:keyboard xkb_layout us
 
 # brightness
 bindsym XF86MonBrightnessDown exec brightnessctl -q set 5%- 
