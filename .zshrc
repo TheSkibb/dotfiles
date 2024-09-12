@@ -17,8 +17,8 @@ setopt PROMPT_SUBST
 PROMPT='$fg[green]${PWD/#$HOME/~} $fg[yellow]${vcs_info_msg_0_}
 %{$fg[magenta]%}> %{$reset_color'
 
-#alias vim="nvim"
-alias vim=~/Programs/nvim-linux64/bin/nvim
+alias vim="nvim"
+#alias vim=~/Programs/nvim-linux64/bin/nvim
 
 alias ls="ls -a --color"
 alias i3lock="i3lock --color=990099"
@@ -38,6 +38,12 @@ export EDITOR=~/Programs/nvim-linux64/bin/nvim
 bindkey -e
 bindkey '^K' backward-delete-char
 
+#home
+bindkey  "^[[H"   beginning-of-line
+#end
+bindkey  "^[[F"   end-of-line
+#delete
+bindkey  "^[[3~"  delete-char
 
 #Load scripts
 source $HOME/.config/scripts/zsh
