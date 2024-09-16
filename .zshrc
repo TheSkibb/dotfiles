@@ -26,12 +26,18 @@ alias rn=". ranger"
 alias py="python3"
 alias pdb="python3 -m pdb"
 alias jup="jupyter lab ."
-alias clip="xclip -selection clipboard"
+
 alias gs="git status"
 alias ga="git add"
 alias gc="git commit -m "
 alias gd="git diff"
 alias mute="bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle"
+
+# clipboard x11
+#alias clip="xclip -selection clipboard"
+
+# clipboard wayland
+alias clip="wl-copy"
 
 #screenshot for sway (area), for whole screen just use grim
 alias screenshot="slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
