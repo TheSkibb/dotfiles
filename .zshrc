@@ -33,18 +33,20 @@ alias gc="git commit -m "
 alias gd="git diff"
 alias mute="bindsym XF86AudioMute exec amixer -D pulse set Master 1+ toggle"
 
+#screenshot for sway (area), for whole screen just use grim
+alias screenshot="slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')"
+
 export EDITOR=~/Programs/nvim-linux64/bin/nvim
 
 bindkey -e
 bindkey '^K' backward-delete-char
 
-#home
-bindkey  "^[[H"   beginning-of-line
-#end
-bindkey  "^[[F"   end-of-line
-#delete
-bindkey  "^[[3~"  delete-char
+bindkey "^[[7~" beginning-of-line
+bindkey "^[[8~" end-of-line
 
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
 #Load scripts
 source $HOME/.config/scripts/zsh
 
