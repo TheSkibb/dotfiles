@@ -30,7 +30,7 @@ bindsym $mod+Shift+n exec $toggle_notification
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/ocean.jpg fill
+# output * bg ~/Pictures/ocean.jpg fill
 
 # Example configuration:
 #
