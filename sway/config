@@ -42,10 +42,10 @@ output * bg ~/Pictures/ocean.jpg fill
 #
 # Example configuration:
 #
-exec swayidle -w \
-          timeout 300 $lock \
-          timeout 120 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep $lock
+# exec swayidle -w \
+          # timeout 300 $lock \
+          # timeout 200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+          # before-sleep $lock
 
 # lock screen on lid close
 set $lock 'swaylock --config ~/.config/sway/swaylock.conf'
@@ -239,8 +239,8 @@ bindsym $mod+Shift+e mode $mode_system
 #resize windows
 bindsym $mod+Ctrl+l resize shrink width 5 px or 5 ppt
 bindsym $mod+Ctrl+h resize grow width 5 px or 5 ppt
-bindsym $mod+Ctrl+j resize shrink height 5 px or 5 ppt
-bindsym $mod+Ctrl+k resize grow height 5 px or 5 ppt
+#bindsym $mod+Ctrl+j resize shrink height 5 px or 5 ppt
+#bindsym $mod+Ctrl+k resize grow height 5 px or 5 ppt
 
 #fine resizing
 bindsym $mod+Ctrl+Shift+l resize shrink width 1 px or 1 ppt
@@ -272,6 +272,13 @@ input type:keyboard {
         xkb_layout us
 }
 
+input type:keyboard xkb_options ctrl:nocaps
+
+# next/prev workspace
+bindsym $mod+Ctrl+j workspace next
+bindsym $mod+Ctrl+k workspace prev
+
+# language
 bindsym $mod+Mod1+n input type:keyboard xkb_layout no
 bindsym $mod+Mod1+u input type:keyboard xkb_layout us
 
@@ -283,7 +290,6 @@ bindsym XF86MonBrightnessUp exec brightnessctl -q set +5%
 bindsym XF86AudioRaiseVolume exec amixer -q sset Master 3%+
 bindsym XF86AudioLowerVolume exec amixer -q sset Master 3%-
 bindsym XF86AudioMute exec amixer set Master 1+ toggle
-
 
 include /etc/sway/config.d/*
 include ~/.config/sway/windows.conf
