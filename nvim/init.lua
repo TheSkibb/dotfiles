@@ -44,6 +44,40 @@ vim.keymap.set('n', '<leader>r', ':registers<CR>', { desc = 'see registers' })
 vim.keymap.set('n', '<leader>nm', 'i\\begin{bmatrix}\n\\end{bmatrix}<ESC>', { desc = 'New Matrix ' })
 vim.keymap.set('n', '<leader>fm', ':%!jq .<CR>', { desc = 'Format current file with jq' })
 
+-- Define a Lua function that sets filetype-specific settings
+local function markdown_settings()
+  -- Set tab related settings
+  vim.o.wrap = true
+  vim.o.linebreak = true
+
+  -- Example of other Python-specific settings
+  -- vim.bo.autoindent = true
+end
+
+-- Create an autocommand for Python files
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'markdown',
+  callback = markdown_settings,
+})
+
+-- Define a Lua function that sets filetype-specific settings
+local function latex_settings()
+  -- Set tab related settings
+  vim.o.wrap = true
+  vim.o.linebreak = true
+
+  -- Example of other Python-specific settings
+  -- vim.bo.autoindent = true
+end
+
+-- Create an autocommand for Python files
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'latex',
+  callback = latex_settings,
+})
+-- break at whitespace
+-- :set nolist wrap linebreak breakat&vim
+
 -- lazy setup
 --
 -- Bootstrap lazy.nvim
@@ -181,7 +215,7 @@ require('lazy').setup {
             map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
             -- Find references for the word under your cursor.
-            map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
+            map('<leader>gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 
             -- Jump to the implementation of the word under your cursor.
             --  Useful when your language has ways of declaring types without an actual implementation.
@@ -444,7 +478,7 @@ require('lazy').setup {
             -- Accept ([y]es) the completion.
             --  This will auto-import if your LSP supports it.
             --  This will expand snippets if the LSP sent a snippet.
-            ['<C-j>'] = cmp.mapping.confirm { select = true },
+            --['<C-j>'] = cmp.mapping.confirm { select = true },
 
             -- If you prefer more traditional completion keymaps,
             -- you can uncomment the following lines
@@ -496,7 +530,7 @@ require('lazy').setup {
           'go',
           'c',
           'diff',
-          'html',
+          --          'html',
           'lua',
           'luadoc',
           'markdown',
@@ -563,15 +597,10 @@ vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags, { desc
 vim.keymap.set('n', '<leader>fw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>fs', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>fc', require('telescope.builtin').resume, { desc = '' })
+vim.keymap.set('n', '<leader>fj', require('telescope.builtin').jumplist, { desc = '' })
 
 vim.keymap.set('n', '<leader>ds', require('telescope.builtin').lsp_document_symbols, { desc = '[D]ocument [S]ymbols' })
 
-vim.keymap.set('n', '<leader>/', function()
-  -- You can pass additional configuration to telescope to change theme, layout, etc.
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
-    previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer' })
+vim.keymap.set('n', '<leader>/', require('telescope.builtin').current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
 
 -- Telescope configuration
