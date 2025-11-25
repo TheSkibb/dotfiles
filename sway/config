@@ -22,7 +22,9 @@ set $menu dmenu_path | dmenu | xargs swaymsg exec --
 
 include /etc/sway/config-vars.d/*
 
-bindsym $mod+space exec rofi -theme Adapta-Nokto -show drun -show-icons
+#bindsym $mod+space exec rofi -theme Adapta-Nokto -show drun -show-icons
+#bindsym $mod+space exec rofi -theme gruvbox-dark-hard -show drun -show-icons
+bindsym $mod+space exec rofi -theme Adapta-Nokto -show-icons -show drun -m $(swaymsg -t get_outputs | jq ".[] | select(.focused == true) | .name" | tr -d '"')
 
 set $toggle_notification "swaync-client -t -sw"
 bindsym $mod+Shift+n exec $toggle_notification
@@ -257,10 +259,12 @@ set $gnome-schema org.gnome.desktop.interface
 exec_always {
     systemctl --user import-environment
     gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-    gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
+    gsettings set org.gnome.desktop.interface icon-theme 'Windows-XP-master'
+    #gsettings set org.gnome.desktop.interface icon-theme 'Adwaita'
     gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 }
+
 
 # touchpad
 
